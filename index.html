@@ -1,0 +1,46 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ "/assets/alignment.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/colors.css" | relative_url }}">
+    <style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-rows: masonry;
+  grid-gap: 1rem;
+}
+
+.card {
+  background-color: var(--card-color);
+  transition: 250ms;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  color: var(--fg-color);
+  text-decoration: none;
+}
+
+.card:hover {
+  background-color: var(--card-hover-color);
+  transform: translate(0, -0.25rem);
+}
+    </style>
+    <title>Demo blog</title>
+  </head>
+  <body>
+    <h1>Welcome to a demo simple blog</h1>
+    <p>This is an example description of the website</p>
+    <div class="grid">
+      {% for post in site.posts %}
+        <a href="{{ post.url }}" class="card">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.description }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </body>
+</html>

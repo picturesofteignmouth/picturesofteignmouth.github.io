@@ -1,0 +1,32 @@
+:root {
+  --bg-color: #eceff4;
+  --fg-color: #000000;
+  --card-color: #e5e9f0;
+  --card-hover-color: #d8dee9;
+  --accent-color: #88c0d0;
+  --accent-contrast-color: #000000;
+  --link-color: #0e67b0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #282c34;
+    --fg-color: #ffffff;
+    --card-color: #2e3440;
+    --card-hover-color: #3b4252;
+    --link-color: #61afef;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color)
+}
+
+a {
+  color: var(--link-color);
+}
+
+hr {
+  border-color: var(--card-hover-color);
+}
