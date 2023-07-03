@@ -1,0 +1,21 @@
+/* styles to make markdown elements look nice */
+
+blockquote {
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  left: 1.6em;
+  width: 0.8rem;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--card-hover-color);
+}
+
+.highlighter-rouge {
+  background-color: var(--card-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

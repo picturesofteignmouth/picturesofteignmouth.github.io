@@ -4,10 +4,7 @@ title:  "Hello world post"
 date:   2023-07-01
 description: "This is a simple example post to test stuff"
 ---
-An h1 header
-============
-
-Example link: [youtube](https://www.youtube.com)
+# An h1 header
 
 Paragraphs are separated by a blank line.
 
@@ -31,10 +28,7 @@ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
 in chapters 12--14"). Three dots ... will be converted to an ellipsis.
 Unicode is supported. ☺
 
-
-
-An h2 header
-------------
+## An h2 header
 
 Here's a numbered list:
 
@@ -69,9 +63,7 @@ for i in range(10):
     print i
 ~~~
 
-
-
-### An h3 header ###
+### An h3 header
 
 Now a nested list:
 
@@ -107,28 +99,15 @@ doc](#an-h2-header). Here's a footnote [^1].
 
 Tables can look like this:
 
-size  material      color
-----  ------------  ------------
-9     leather       brown
-10    hemp canvas   natural
-11    glass         transparent
+| size | material     | color        |
+| ---- | ------------ | ------------ |
+| 9    | leather      | brown        |
+| 10   | hemp canvas  | natural      |
+| 11   | glass        | transparent  |
 
 Table: Shoes, their sizes, and what they're made of
 
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-
---------  -----------------------
-keyword   text
---------  -----------------------
-red       Sunsets, apples, and
-          other red or reddish
-          things.
-
-green     Leaves, grass, frogs
-          and other things it's
-          not easy being.
---------  -----------------------
+(The above is the caption for the table.)
 
 A horizontal rule follows.
 
@@ -154,12 +133,7 @@ Here's a "line block":
 
 and images can be specified like so:
 
-![example image](example-image.jpg "An exemplary image")
+![random example image](https://picsum.photos/200/300 "An random exemplary image")
 
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
+Note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
