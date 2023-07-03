@@ -2,6 +2,7 @@
 
 blockquote {
   position: relative;
+  margin-top: 1.5em;
 }
 
 blockquote::before {
@@ -12,6 +13,14 @@ blockquote::before {
   height: 100%;
   border-radius: 999px;
   background: var(--card-hover-color);
+}
+
+blockquote::after {
+  content: "“”";
+  position: absolute;
+  font-size: 3rem;
+  color: var(--card-hover-color);
+  top: -0.6em;
 }
 
 .highlighter-rouge {
