@@ -26,5 +26,9 @@ blockquote::after {
 .highlighter-rouge {
   background-color: var(--card-color);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.1rem;
+}
+
+pre.highlight {
+  margin: 1rem;
 }
