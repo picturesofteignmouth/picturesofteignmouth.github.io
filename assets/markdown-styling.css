@@ -34,3 +34,13 @@ pre.highlight {
   overflow: auto;
   max-height: 40rem;
 }
+
+a[href^="http"]::after {
+  content: "↗";
+  margin-left: 0.2em;
+  display: inline-block;
+}
+
+a[href^="https://godalming123.github.io/jekyll-blog/"]::after {
+  display: none !important;
+}
