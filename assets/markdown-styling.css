@@ -20,7 +20,7 @@ blockquote::after {
   position: absolute;
   font-size: 3em;
   color: var(--card-hover-color);
-  top: -0.6em;
+  top: -0.65em;
 }
 
 .highlighter-rouge {
