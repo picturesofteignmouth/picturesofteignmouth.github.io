@@ -9,12 +9,17 @@ strong,
 small,
 li,
 blockquote,
-.highlighter-rouge,
-hr {
+dl,
+.highlighter-rouge {
   max-width: 40rem;
+  margin: 0 auto;
+}
+
+table, img {
   margin: 0 auto;
 }
 
 hr {
   max-width: 45rem;
+  margin: 0.5em auto;
 }
