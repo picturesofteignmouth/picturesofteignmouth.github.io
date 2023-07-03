@@ -8,7 +8,7 @@ blockquote {
 blockquote::before {
   content: "";
   position: absolute;
-  left: 1.6em;
+  left: -1.6em;
   width: 0.8rem;
   height: 100%;
   border-radius: 999px;
