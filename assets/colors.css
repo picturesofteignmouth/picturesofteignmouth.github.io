@@ -1,4 +1,5 @@
 :root {
+  /* nord colorscheme with a custom-choose link color */
   --bg-color: #eceff4;
   --fg-color: #000000;
   --card-color: #e5e9f0;
@@ -8,6 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* onedark colorscheme with nord card and card hover colors */
     --bg-color: #282c34;
     --fg-color: #ffffff;
     --card-color: #2e3440;
@@ -26,5 +28,5 @@ a {
 }
 
 hr {
-  border-color: var(--card-hover-color);
+  border: 0.1rem solid var(--card-hover-color);
 }
