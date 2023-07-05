@@ -18,6 +18,9 @@
     <article>
       <p style="margin-bottom: 0;">{{ page.date | date: "%-d %B %Y" }}</p>
       <h1 class="main-title">{{ page.title }}</h1>
+      {% if page.frontImage %}
+        <img src="{{ page.frontImage | relative_url }}" style="display: block;" />
+      {% endif %}
       {{ content }}
     </article>
   </body>

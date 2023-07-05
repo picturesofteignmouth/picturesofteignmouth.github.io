@@ -34,6 +34,10 @@
 .card p {
   margin: 0;
 }
+
+.card img {
+  width: 100%;
+}
     </style>
     <title>Demo blog</title>
   </head>
@@ -45,7 +49,12 @@
         <a href="{{ post.url | relative_url }}" class="card">
           <p>{{ post.date | date: "%-d %B %Y" }}</p>
           <h2>{{ post.title }}</h2>
-          <p>{{ post.description }}</p>
+          {% if page.frontImage %}
+            <img src="{{ page.frontImage | relative_url }}" style="display: block;" />
+          {% endif %}
+          {% if page.description %}
+            <p>{{ post.description }}</p>
+          {% endif %}
         </a>
       {% endfor %}
     </div>

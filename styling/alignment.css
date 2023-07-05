@@ -19,10 +19,9 @@ table, img, .highlighter-rouge {
 }
 
 .highlighter-rouge {
-  max-width: 80em;
+  max-width: 100%;
 }
 
 hr {
   max-width: 55rem;
-  margin: 0.5em auto;
 }
