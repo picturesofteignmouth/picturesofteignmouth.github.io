@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=A simple example jekyll blog site."">
-    <link rel="stylesheet" href="{{ "/styling/alignment.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/styling/colors.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/styling/alignment.css"  | relative_url }}">
+    <link rel="stylesheet" href="{{ "/styling/colors.css"     | relative_url }}">
     <link rel="stylesheet" href="{{ "/styling/typography.css" | relative_url }}">
     <style>
 .grid {
@@ -31,11 +31,11 @@
   transform: translate(0, -0.25rem);
 }
 
-.card p {
+.card > * {
   margin: 0;
 }
 
-.card img {
+.card > img {
   width: 100%;
 }
     </style>
