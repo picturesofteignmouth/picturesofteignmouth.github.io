@@ -28,6 +28,9 @@ blockquote::after {
   border-radius: 0.5rem;
   width: min-content;
   overflow: hidden;
+}
+
+code.highlighter-rouge {
   padding: 0.1rem;
 }
 
