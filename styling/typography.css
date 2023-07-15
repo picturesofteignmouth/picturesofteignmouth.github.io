@@ -42,4 +42,5 @@ h1.main-title {
 img {
   border-radius: 0.5rem;
   display: block;
+  max-width: 100%;
 }
