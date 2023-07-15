@@ -1,2 +1,7 @@
 baseurl: "/"
 url: "https://www.picturesofteignmouth.github.io"
+
+title: "Pictures of Teignmouth"
+description: "A blog with benefits, the property game, pruning matters, today's insights, my photography and my art."
+icon: "/images/rose.jpg"
+front-image: "/images/rose.jpg"

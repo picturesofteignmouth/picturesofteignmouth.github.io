@@ -3,21 +3,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>{{ site.title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A blog with benefits, the property game, pruning matters, today's insights, my photography, my art".>
+    {% if site.description %}
+      <meta name="description" content="{{ site.description }}">
+    {% endif %}
+    {% if site.icon %}
+      <link rel="icon" type="image/jpg" href="{{ site.icon | relative_url }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ "/styling/colors.css"     | relative_url }}">
     <link rel="stylesheet" href="{{ "/styling/typography.css" | relative_url }}">
-    <link rel="icon" type="image/x-icon" href="{{"/images/rose.jpeg" }} | relative_url">
     <style>
+html {
+  scroll-behavior: smooth;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-template-rows: masonry;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .card {
+  position: relative;
   background-color: var(--card-color);
   transition: 250ms;
   border-radius: 0.5rem;
@@ -26,9 +37,24 @@
   text-decoration: none;
 }
 
+.card > a {
+  position: absolute;
+  z-index: 2;
+  color: transparent;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card > p > a {
+  position: relative;
+  z-index: 3;
+}
+
 .card:hover {
   background-color: var(--card-hover-color);
-  transform: translate(0, -0.25rem);
+  transform: translate(0, -0.1rem);
 }
 
 .card > * {
@@ -39,24 +65,32 @@
   width: 100%;
 }
     </style>
-    <title>Pictures of Teignmouth</title>
   </head>
   <body>
-    <h1 class="main-title">Pictures of Teignmouth</h1>
-    <p>A blog with benefits</p>
-    <div class="grid">
-      {% for post in site.posts %}
-        <a href="{{ post.url | relative_url }}" class="card">
-          <p>{{ post.date | date: "%-d %B %Y" }}</p>
-          <h2>{{ post.title }}</h2>
-          {% if post.frontImage %}
-            <img src="{{ post.frontImage | relative_url }}" style="display: block;" />
-          {% endif %}
-          {% if post.description %}
-            <p>{{ post.description }}</p>
-          {% endif %}
-        </a>
-      {% endfor %}
-    </div>
+    {% if site.front-icon %}
+      <img src="{{ site.front-icon }}">
+    {% endif %}
+    <h1 class="main-title">{{ site.title }}</h1>
+    {% if site.description %}
+      <p>{{ site.description }}</p>
+    {% endif %}
+    {% for category in site.categories %}
+      <h2 id="{{ category[0] | replace: " ", "-" }}">{{ category[0] }}</h2>
+      <div class="grid">
+        {% for post in category[1] %}
+        <div class="card">
+            <p>{{ post.date | date: "%-d %B %Y" }}{% for category in post.categories %} ⬤ <a href="{{ "#" | append: category | replace: " ", "-" }}">{{ category }}</a>{% endfor %}</p>
+            <h3>{{ post.title }}</h3>
+            {% if post.frontImage %}
+              <img src="{{ post.frontImage | relative_url }}" style="display: block;" />
+            {% endif %}
+            {% if post.description %}
+              <p>{{ post.description }}</p>
+            {% endif %}
+            <a href="{{ post.url | relative_url }}">Open the post -></a>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
   </body>
 </html>
